@@ -1,0 +1,89 @@
+<%- include('../layouts/header.ejs') %>
+
+    <nav class="navbar navbar-light bg-secondary">
+        <div class="container-fluid">
+            <button class="btn btn-dark" type="button"><a href="/admin/home"
+                    style="text-decoration: none; color: #fff;">Back
+                </a></button>
+            <h1><a class="navbar-brand">DASHBOARD</a></h1>
+
+            <button class="btn btn-dark" type="button"><a href="/admin/new-user"
+                    style="text-decoration: none; color: #fff;">Add new
+                    user</a></button>
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search User " aria-label="Search"
+                            name="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+
+        </div>
+    </nav>
+
+    <table class="table align-middle mb-0 bg-light table-striped table-dark table-hover">
+        <thead class="bg-light">
+            <tr>
+                <th>
+                    <div class="ms-3">Name</div>
+                </th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (users.length> 0){
+                for (let i=0 ; i<users.length ; i++){ %>
+                    <tr>
+
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1">
+                                        <%= users[i].name %>
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>
+                            <p class="fw-normal mb-1">
+                                <%= users[i].email %>
+                            </p>
+                        </td>
+
+                        <td>
+                            <%= users[i].mobile %>
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark">
+                                <a href="/admin/edit-user?id=<%= users[i]._id %>"><img
+                                        src="https://png.pngtree.com/element_our/20190601/ourmid/pngtree-white-edit-icon-image_1338673.jpg"
+                                        alt="" width="30px"></a>
+                            </button>
+
+                            <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark">
+                                <a href="/admin/delete-user?id=<%= users[i]._id %>" style="text-decoration: none;"><img
+                                        src="https://img.icons8.com/color/512/delete-forever.png" alt=""
+                                        width="30px"></a>
+                            </button>
+                        </td>
+
+                    </tr>
+
+                    <% } } else{ %>
+                        <tr>
+                            <td colspan="5">User Not Found</td>
+                        </tr>
+                        <% } %>
+        </tbody>
+    </table>
+
+    <%- include('../layouts/footer.ejs') %>

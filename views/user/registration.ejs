@@ -1,0 +1,59 @@
+<%- include('../layouts/header.ejs') %>
+
+  <section class="vh-100 bg-image"
+    style="background-image: url('https://img.freepik.com/free-vector/abstact-hexagon-background-memphis-style_1017-31955.jpg?w=1060&t=st=1674291633~exp=1674292233~hmac=7d968b42a46e761ae0d2bd46ae6ed3da3ef08eeae850116e4b0dc8ed27d77472');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                <form action="" method="POST">
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="name" required />
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email" required />
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="mobile" required/>
+                    <label class="form-label" for="form3Example1cg">Your Mobile No</label>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" required/>
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
+                  <% if(typeof message !=='undefined' ){ %>
+                    <h5 style="color: green;">
+                      <%= message %>
+                    </h5>
+                    <% } %>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit "
+                      class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  </div>
+                  
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<%- include('../layouts/footer.ejs') %>

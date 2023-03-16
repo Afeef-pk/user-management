@@ -1,0 +1,46 @@
+<%- include('../layouts/header.ejs') %>
+
+<section class="vh-100 gradient-custom py-2"
+        style="background:url(https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?w=996&t=st=1674297773~exp=1674298373~hmac=574858bf41a32df4b2822b56e71d98752bfa4def04f80892e12cff383206f563); background-size: cover;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="backdrop-filter: blur(0px);">
+                    <div class="card  " style="border-radius: 1rem;">
+                        <div class="card-body py-4 text-center border-5">
+
+                            <form class="mb-md-5 mt-md-4 pb-5" action="/login" method="post">
+                                <h2 class="fw-bold mb-2 text-uppercase">User Login</h2>
+                                <div class="d-flex justify-content-center align-items-center mt-2">
+                                    <% if(typeof message !=='undefined' ){ %>
+                                        <h5 style="color: red;">
+                                            <%= message %>
+                                        </h5>
+                                        <% } %>
+                                </div>
+                                <p class="text-dark-50 mb-3">Please enter email and password!</p>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <input type="email" class="form-control form-control-lg bg-transparent text-dark"
+                                       name="email" placeholder="Enter Email" />
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="typePasswordX">Password</label>
+                                    <input type="password" id="typePasswordX"
+                                        class="form-control form-control-lg bg-transparent text-dark" name="password"
+                                        placeholder="Enter password" required />
+                                </div>
+                                <button class="btn btn-dark px-5 mt-5" type="submit"
+                                    value="Login">Login</button>
+
+                                    <p class="text-center text-dark mt-5 mb-0">Don't Have an account ?  <a href="/register"
+                                        class="fw-bold text-body"><u> Create here</u></a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('../layouts/footer.ejs') %>

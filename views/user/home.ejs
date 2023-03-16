@@ -1,0 +1,53 @@
+<%- include('../layouts/header.ejs') %>
+
+    <header>
+        <div class="text-center bg-image" style="
+  background-image: url(https://www.barings.com/globalassets/archive/image-or-video-content/bottom-nav-hero.jpg?t=20211205064831);
+   background-size: contain; height:100vh;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent"
+                style="backdrop-filter:blur(0px); height: 60px;">
+                <div class="container">
+                    <div class="dropdown">
+                        <a class="d-flex align-items-center hidden-arrow" style="margin-left: -5px; cursor:default;"
+                            href="" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <img src="https://w7.pngwing.com/pngs/81/570/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png"
+                                class="rounded-circle" height="35" alt="Edit" loading="lazy" />
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin" style="color:mintcream;">
+                                    <%=user.name %>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center">
+                            <a class="btn btn-outline-danger btn-lg px-4 py-1 mt-3" href="/logout"
+                                role="button">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin-top: 120px; height: 350px;">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div style="color: lightgray;">
+                        <h1 class="mb-3">
+                            Welcome <%=user.name %>
+                        </h1>
+                        <h3 class="mb-3">Name: <%= user.name %>
+                        </h3>
+                        <h3 class="mb-3">Email : <%= user.email %>
+                        </h3>
+                        <h3 class="mb-3">Mobile : <%= user.mobile %>
+                        </h3>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <%- include('../layouts/footer.ejs') %>
